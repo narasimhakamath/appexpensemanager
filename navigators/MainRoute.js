@@ -95,7 +95,9 @@ const HomeTab = createBottomTabNavigator({
 	}
 }, {
 	tabBarOptions: {
-		showLabel: false
+		showLabel: false,
+		activeBackgroundColor: "#ecf0f1",
+		keyboardHidesTabBar: true
 	}
 });
 
