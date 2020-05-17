@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
 	aboutText: {
 		paddingVertical: 10,
 		textAlign: "center",
+		fontFamily: "abelRegular",
+		fontSize: 16
 	},
 	profileImage: {
 		width: "100%",
