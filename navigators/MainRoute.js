@@ -3,6 +3,8 @@ import {createAppContainer} from "react-navigation";
 import {createStackNavigator} from "react-navigation-stack";
 import {createDrawerNavigator} from "react-navigation-drawer";
 import {createBottomTabNavigator} from "react-navigation-tabs";
+import {AntDesign} from '@expo/vector-icons';
+import {Octicons} from '@expo/vector-icons';
 
 import AccountsScreen from "./../screens/AccountsScreen";
 import CategoriesScreen from "./../screens/CategoriesScreen";
@@ -77,8 +79,8 @@ const HomeTab = createBottomTabNavigator({
 		screen: TransactionsStack,
 		navigationOptions: ({navigation}) => {
 			return {
-				title: "Transaction",
-				headerLeft: () => <Header navigation={navigation} />
+				headerLeft: () => <Header navigation={navigation} />,
+				tabBarIcon: () => <AntDesign name="copy1" size={24} color="black" />
 			}
 		}
 	},
@@ -86,10 +88,14 @@ const HomeTab = createBottomTabNavigator({
 		screen: ReportsStack,
 		navigationOptions: ({navigation}) => {
 			return {
-				title: "Reports",
-				headerLeft: () => <Header navigation={navigation} />
+				headerLeft: () => <Header navigation={navigation} />,
+				tabBarIcon: () => <Octicons name="graph" size={24} color="black" />
 			}
 		}
+	}
+}, {
+	tabBarOptions: {
+		showLabel: false
 	}
 });
 
@@ -103,7 +109,7 @@ const AboutStack = createStackNavigator({
 			}
 		}
 	}
-})
+});
 
 const mainDrawer = createDrawerNavigator({
 	Transactions: {
